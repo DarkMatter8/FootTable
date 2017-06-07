@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TabActivity.iml" filepath="$PROJECT_DIR$/TabActivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FootTable.iml" filepath="$PROJECT_DIR$/FootTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

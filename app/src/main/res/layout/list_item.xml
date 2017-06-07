@@ -2,16 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:weightSum="10"
+    >
 
-        <TextView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Medium Text"
             android:id="@+id/name"
+            android:padding="7dp"
+            android:width="200dp"
             android:textColor="#1d1b1b"
             android:fontFamily="sans-serif-thin"
-            android:textStyle="normal"/>
+            android:textStyle="normal"
+                android:height="35dp"/>
 
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Medium Text"
+                    android:id="@+id/points"
+                    android:textColor="#1d1b1b"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-thin"
+                    android:textStyle="normal"
+                    android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/gd"
+                android:padding="7dp"
+                android:textColor="#1d1b1b"
+                android:layout_toLeftOf="@id/points"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"
+                android:height="35dp"
+                android:width="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/lose"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#1d1b1b"
+                android:layout_toLeftOf="@id/gd"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/draw"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#1d1b1b"
+                android:layout_toLeftOf="@id/lose"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/win"
+                android:height="35dp"
+                android:width="30dp"
+                android:padding="7dp"
+                android:textColor="#1d1b1b"
+                android:layout_toLeftOf="@id/draw"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/played"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#1d1b1b"
+                android:layout_toLeftOf="@id/win"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+        </RelativeLayout>
 </LinearLayout>

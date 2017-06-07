@@ -23,24 +23,119 @@
         app:tabSelectedTextColor="#ffffff">
     </android.support.design.widget.TabLayout>
 
-    <TextView
-        android:layout_width="fill_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:background="#485c66"
-        android:text="Teams"
-        android:textColor="#ffffff"
-        android:fontFamily="sans-serif-thin"
-        android:textStyle="normal"
-        android:id="@+id/textView"
-        android:layout_below="@+id/tab_layout"
-        android:gravity="center"/>
+        android:layout_below="@id/tab_layout"
+        android:id="@+id/bar"
+        android:background="#384951"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Team Name"
+                android:id="@+id/name"
+                android:padding="7dp"
+                android:width="200dp"
+                android:textColor="#ffffff"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"
+                android:height="35dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="P"
+                android:id="@+id/points"
+                android:textColor="#ffffff"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GD"
+                android:id="@+id/gd"
+                android:padding="7dp"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@id/points"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"
+                android:height="35dp"
+                android:width="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="L"
+                android:id="@+id/lose"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@id/gd"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="D"
+                android:id="@+id/draw"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@id/lose"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="W"
+                android:id="@+id/win"
+                android:height="35dp"
+                android:width="30dp"
+                android:padding="7dp"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@id/draw"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="PL"
+                android:id="@+id/played"
+                android:padding="7dp"
+                android:height="35dp"
+                android:width="30dp"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@id/win"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="normal"/>
+        </RelativeLayout>
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/viewpager"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/bar"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

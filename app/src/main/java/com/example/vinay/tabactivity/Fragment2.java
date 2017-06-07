@@ -36,7 +36,7 @@ public class Fragment2 extends Fragment {
 
         final View view =  inflater.inflate(R.layout.tab2,container,false);
 
-        String jsonURL = "http://api.football-data.org/v1/competitions/436/teams";
+        String jsonURL = "http://api.football-data.org/v1/competitions/436/leagueTable";
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
@@ -63,13 +63,18 @@ public class Fragment2 extends Fragment {
                             List<Team> data=new ArrayList<>();
                             JSONObject json = new JSONObject(jsondata);
 
-                            JSONArray jArray = json.getJSONArray("teams");
+                            JSONArray jArray = json.getJSONArray("standing");
 
                             for(int i=0;i<jArray.length();i++){
                                 JSONObject json_data = jArray.getJSONObject(i);
                                 Team TData = new Team();
-                                TData.name= json_data.getString("name");
-
+                                TData.name= json_data.getString("teamName");
+                                TData.points=json_data.getString("points");
+                                TData.played=json_data.getString("playedGames");
+                                TData.win=json_data.getString("wins");
+                                TData.draw=json_data.getString("draws");
+                                TData.lose=json_data.getString("losses");
+                                TData.gd=json_data.getString("goalDifference");
                                 data.add(TData);
                             }
 

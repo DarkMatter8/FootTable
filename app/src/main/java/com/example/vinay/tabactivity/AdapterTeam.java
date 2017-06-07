@@ -39,7 +39,12 @@ public class AdapterTeam extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         MyHolder myHolder= (MyHolder) holder;
         Team current=data.get(position);
         myHolder.name.setText(current.name);
-
+        myHolder.points.setText(current.points);
+        myHolder.played.setText(current.played);
+        myHolder.win.setText(current.win);
+        myHolder.draw.setText(current.draw);
+        myHolder.lose.setText(current.lose);
+        myHolder.gd.setText(current.gd);
     }
 
     @Override
@@ -50,13 +55,23 @@ public class AdapterTeam extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class MyHolder extends RecyclerView.ViewHolder {
 
         TextView name;
-
+        TextView points;
+        TextView played;
+        TextView win;
+        TextView draw;
+        TextView lose;
+        TextView gd;
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.name);
-
+            points= (TextView) itemView.findViewById(R.id.points);
+            played = (TextView)itemView.findViewById(R.id.played);
+            win = (TextView)itemView.findViewById(R.id.win);
+            draw = (TextView)itemView.findViewById(R.id.draw);
+            lose = (TextView)itemView.findViewById(R.id.lose);
+            gd = (TextView)itemView.findViewById(R.id.gd);
         }
     }
 }
