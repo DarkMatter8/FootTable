@@ -34,7 +34,7 @@ public class Fragment1 extends Fragment {
 
     private AdapterTeam mAdapter;
     public String jsondata;
-    public String matchweek;
+    public int matchweek;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class Fragment1 extends Fragment {
             call.enqueue(new Callback() {
                 @Override
                 public void onFailure(okhttp3.Call call, IOException e) {
-                    Toast.makeText(getActivity(),"some error",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Some Error",Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -73,7 +73,7 @@ public class Fragment1 extends Fragment {
                             try {
                                 List<Team> data=new ArrayList<>();
                                 JSONObject json = new JSONObject(jsondata);
-                                matchweek = json.getString("matchday");
+                                matchweek = json.getInt("matchday");
                                 JSONArray jArray = json.getJSONArray("standing");
 
                                 for(int i=0;i<jArray.length();i++){
@@ -86,18 +86,20 @@ public class Fragment1 extends Fragment {
                                     TData.draw=json_data.getString("draws");
                                     TData.lose=json_data.getString("losses");
                                     TData.gd=json_data.getString("goalDifference");
+                                    TData.position=json_data.getString("position");
                                     data.add(TData);
                                 }
-
-
 
                                 RecyclerView mTeamlist = (RecyclerView)view.findViewById(R.id.recycler_view);
                                 mAdapter = new AdapterTeam(getActivity(), data);
                                 mTeamlist.setLayoutManager(new LinearLayoutManager(getActivity()));
                                 mTeamlist.setAdapter(mAdapter);
 
-
-                                Toast.makeText(getActivity(),"MatchWeek:"+matchweek, Toast.LENGTH_SHORT).show();
+                                if(matchweek == 38){
+                                    Toast.makeText(getActivity(),"Season Finished", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getActivity(),"MatchWeek:"+matchweek, Toast.LENGTH_SHORT).show();
+                                }
 
                             } catch (JSONException e) {
                                 Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();

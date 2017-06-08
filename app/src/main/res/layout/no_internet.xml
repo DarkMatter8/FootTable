@@ -4,11 +4,10 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
         android:id="@+id/imageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentEnd="false"
-        android:src="@mipmap/no__internet" />
+        android:src="@mipmap/no_internet"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
 </RelativeLayout>

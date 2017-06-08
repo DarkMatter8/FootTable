@@ -29,9 +29,22 @@
         android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="11"
+        android:weightSum="12"
         android:background="@color/colorPrimary"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="S"
+            android:id="@+id/pos"
+            android:padding="7dp"
+            android:height="35dp"
+            android:width="0dp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textStyle="normal"
+            android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="GD"
+            android:text="G"
             android:id="@+id/gd"
             android:padding="7dp"
             android:textColor="#ffffff"

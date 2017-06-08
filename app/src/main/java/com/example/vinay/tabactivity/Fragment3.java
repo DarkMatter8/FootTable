@@ -33,7 +33,7 @@ public class Fragment3 extends Fragment {
 
     private AdapterTeam mAdapter;
     public String jsondata;
-    public String matchweek;
+    public int matchweek;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class Fragment3 extends Fragment {
                             try {
                                 List<Team> data = new ArrayList<>();
                                 JSONObject json = new JSONObject(jsondata);
-                                matchweek = json.getString("matchday");
+                                matchweek = json.getInt("matchday");
                                 JSONArray jArray = json.getJSONArray("standing");
 
                                 for (int i = 0; i < jArray.length(); i++) {
@@ -83,6 +83,7 @@ public class Fragment3 extends Fragment {
                                     TData.draw = json_data.getString("draws");
                                     TData.lose = json_data.getString("losses");
                                     TData.gd = json_data.getString("goalDifference");
+                                    TData.position=json_data.getString("position");
                                     data.add(TData);
                                 }
 
@@ -93,7 +94,11 @@ public class Fragment3 extends Fragment {
                                 mTeamlist.setLayoutManager(new LinearLayoutManager(getActivity()));
                                 mTeamlist.setAdapter(mAdapter);
 
-                                Toast.makeText(getActivity(), "MatchWeek:" + matchweek, Toast.LENGTH_SHORT).show();
+                                if(matchweek == 38){
+                                    Toast.makeText(getActivity(),"Season Finished", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getActivity(),"MatchWeek:"+matchweek, Toast.LENGTH_SHORT).show();
+                                }
 
 
                             } catch (JSONException e) {

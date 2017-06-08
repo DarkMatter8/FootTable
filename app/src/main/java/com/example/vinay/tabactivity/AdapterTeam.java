@@ -45,6 +45,7 @@ public class AdapterTeam extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myHolder.draw.setText(current.draw);
         myHolder.lose.setText(current.lose);
         myHolder.gd.setText(current.gd);
+        myHolder.pos.setText(current.position);
     }
 
     @Override
@@ -61,6 +62,7 @@ public class AdapterTeam extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView draw;
         TextView lose;
         TextView gd;
+        TextView pos;
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {
@@ -72,6 +74,7 @@ public class AdapterTeam extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             draw = (TextView)itemView.findViewById(R.id.draw);
             lose = (TextView)itemView.findViewById(R.id.lose);
             gd = (TextView)itemView.findViewById(R.id.gd);
+            pos = (TextView)itemView.findViewById(R.id.pos);
         }
     }
 }
