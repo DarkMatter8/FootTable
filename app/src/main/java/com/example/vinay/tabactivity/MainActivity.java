@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Darkmatter865")));
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Darkmatter8")));
                             }
                         })
                         .setDescription("Check me out on GitHub !")

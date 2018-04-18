@@ -44,7 +44,7 @@ public class Fragment4 extends Fragment {
 
             final View view = inflater.inflate(R.layout.tab4, container, false);
 
-            String jsonURL = "http://api.football-data.org/v1/competitions/433/leagueTable";
+            String jsonURL = "http://api.football-data.org/v1/competitions/449/leagueTable";
 
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
